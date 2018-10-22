@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="empty"/>
+    <referenceContainer name="page.wrapper">
+        <container name="header.container" as="header_container" label="Page Header Container"  htmlTag="header" htmlClass="page-header" before="-" />
+
+        <container name="mina-slideshow" as="mina-slideshow" label="Page Slideshow Container" htmlTag="section" htmlClass="mina-slideshow" before="main.content"/>
+
+        <container name="mina-massbottom" as="mina-massbottom" label="Page Massbottom Container" htmlTag="section" htmlClass="section p-l-50 p-r-50 p-t-30 bg-white" after="mina-for-room"/>
+
+        <container name="mina-massbottom2" as="mina-massbottom2" label="Page Massbottom2 Container" htmlTag="section" htmlClass="clearfix" after="mina-massbottom"/>
+
+        <container name="mina-massbottom3" as="mina-massbottom3" label="Page Massbottom2 Container" after="mina-massbottom"/>
+
+        <container name="mina-massbottom5" as="mina-massbottom5" label="Page Massbottom2 Container" after="mina-massbottom" htmlTag="div" htmlClass="page-wrap page-push-to-left"/>
+
+        <container name="mina-subscribe-home7" as="mina-subscribe-home7" label="Page Massbottom2 Container"/>
+
+        <container name="mina-best-seller" as="mina-best-seller" label="Page Massbottom2 Container" after="mina-subscribe-home7"/>
+
+        <container name="mina-massbottom4" as="mina-massbottom4" label="Page Massbottom2 Container" after="mina-best-seller"/>
+
+        <container name="mina-product-banner" as="mina-product-banner" label="Page Massbottom2 Container" after="mina-slideshow"/>
+
+        <container name="mina-deal-of-the-day" as="mina-deal-of-the-day" label="Subscribe homepage 4" htmlTag="section" after="main.content"/>
+
+        <container name="mina-about-us-page01" as="mina-about-us-page01" label="About us page" htmlTag="section" before="main.content"/>
+
+        <container name="footer-container" as="footer" before="before.body.end" label="Page Footer Container" htmlTag="footer" htmlClass="page-footer" />
+
+        <container name="footer-container-homepage3" as="footer-container-homepage3" before="before.body.end" label="Page Footer Container" htmlTag="footer" htmlClass="footer bg-black p-t-80 p-b-60" />
+
+        <container name="footer-container-homepage4" as="footer-container-homepage4" before="before.body.end" label="Page Footer Container"/>
+    </referenceContainer>
+</layout>

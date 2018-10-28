@@ -42,7 +42,7 @@
 
 
         <referenceContainer name="footer-container">
-            <container name="footer-top" label="Footer Top" htmlTag="div"  before="-">
+            <container name="footer-top" label="Footer Top" before="-">
                 <block class="Magento\Cms\Block\Block" name="flow-footer">
                     <arguments>
                         <argument name="block_id" xsi:type="string">flow-footer</argument>

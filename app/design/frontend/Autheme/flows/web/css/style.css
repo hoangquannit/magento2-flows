@@ -982,6 +982,10 @@ input[type=number] {
   margin: 0;
 }
 
+.footer #newsletter-error{
+  float: left;
+}
+
 .copy-right {
   border-top: 1px solid #ebebeb;
   padding: 25px 80px 35px;
@@ -6329,3 +6333,4 @@ ul.tab-product {
     font-size: 24px;
   }
 }
+

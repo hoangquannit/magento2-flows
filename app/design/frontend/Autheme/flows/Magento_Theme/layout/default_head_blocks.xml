@@ -12,9 +12,13 @@
         <css src="https://fonts.googleapis.com/css?family=Poppins:100,400,500,600,700" src_type="url"/>
         <css src="css/fonts/font-awesome/css/font-awesome.min.css" />
         <css src="css/fonts/material/css/materialdesignicons.min.css" />
+        <css src="owl.carousel/assets/owl.carousel.css" />
         <css src="css/bootstrap/bootstrap.css" />
         <css src="css/bootstrap/theme.css" />
         <css src="css/style.css" />
+        <script src="jquery.js" />
+        <script src="owl.carousel/owl.carousel.min.js" />
+        <script src="js/owl-custom.js" />
     </head>
 </page>
  

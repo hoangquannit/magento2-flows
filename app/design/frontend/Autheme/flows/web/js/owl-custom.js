@@ -1,9 +1,12 @@
-(function ($) {
+require([
+    'jquery',
+    'owl.carousel/owl.carousel.min'
+],function(){
     // USE STRICT
     "use strict";
-     $(document).ready(function() {
+    jQuery(document).ready(function($) {
 
-        $("#owl-products").owlCarousel({
+        jQuery("#owl-products").owlCarousel({
             nav: true, 
             margin:30,
             slideSpeed : 600,
@@ -26,7 +29,7 @@
             ],
         });
 
-        $("#owl-recent-blog").owlCarousel({
+        jQuery("#owl-recent-blog").owlCarousel({
             nav: true, 
             margin:30,
             loop:true,
@@ -49,7 +52,7 @@
               "<span class='mdi mdi-chevron-right'></span>"
             ],
         });
-        $("#owl-recent-blog-4").owlCarousel({
+        jQuery("#owl-recent-blog-4").owlCarousel({
             nav: true, 
             margin:30,
             loop:true,
@@ -73,7 +76,7 @@
             ],
         });
 
-        $("#owl-instagram").owlCarousel({
+        jQuery("#owl-instagram").owlCarousel({
             nav: false,
             slideSpeed : 600,
             items : 3,
@@ -97,7 +100,7 @@
             pagination: false,
         });
 
-        $("#owl-partner").owlCarousel({
+        jQuery("#owl-partner").owlCarousel({
             nav: false,
             slideSpeed : 600,
             items : 3,
@@ -120,7 +123,7 @@
             },
             pagination: false,
         });
-         $("#owl-our-team").owlCarousel({
+        jQuery("#owl-our-team").owlCarousel({
             nav: false,
             slideSpeed : 600,
             margin:30,
@@ -143,7 +146,7 @@
             pagination: false,
         });
 
-         $("#owl-testimonial").owlCarousel({
+        jQuery("#owl-testimonial").owlCarousel({
             nav: true,
             slideSpeed : 600,
             margin:30,
@@ -170,7 +173,7 @@
               "<span class='mdi mdi-arrow-right'></span>"
             ],
         });
-         $("#owl-item-product").owlCarousel({
+        jQuery("#owl-item-product").owlCarousel({
             nav: false,
             slideSpeed : 600,
             margin:30,
@@ -198,7 +201,7 @@
         });
     });
 
-})(jQuery);
+});
 
 
 

@@ -10,6 +10,10 @@
     <referenceContainer name="page.wrapper">
         <container name="header.container" as="header_container" label="Page Header Container"  htmlTag="header" htmlClass="page-header" before="-" />
 
+        <container name="flow-homepage1-categories" as="flow-homepage1-categories" />
+
+        <container name="flow-homepage1-services" as="flow-homepage1-services" />
+
         <container name="flow-homepage-instagram" as="flow-homepage1-instagram" />
 
         <container name="footer-container" as="footer" before="before.body.end" label="Page Footer Container"/>

@@ -967,6 +967,7 @@ input[type=number] {
   border-radius: 50px;
   border: 1px solid #ddd;
   width: 85%;
+  height: auto;
 }
 
 .footer .footer-btn {
@@ -975,6 +976,10 @@ input[type=number] {
   position: absolute;
   left: 70%;
   padding: 5px 0px;
+}
+
+.footer ul>li {
+  margin: 0;
 }
 
 .copy-right {

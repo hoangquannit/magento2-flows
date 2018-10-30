@@ -12,6 +12,8 @@
 
         <container name="flow-homepage1-categories" as="flow-homepage1-categories" />
 
+        <container name="flow-homepage1-featured" as="flow-homepage1-featured" />
+
         <container name="flow-homepage1-services" as="flow-homepage1-services" />
 
         <container name="flow-homepage1-blog" as="flow-homepage1-blog" />

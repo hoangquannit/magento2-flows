@@ -17,6 +17,7 @@
         <css src="css/bootstrap/theme.css" />
         <css src="css/style.css" />
         <script src="jquery.js" />
+        <script src="bootstrap/js/bootstrap.min.js" />
         <script src="owl.carousel/owl.carousel.min.js" />
         <script src="js/owl-custom.js" />
     </head>

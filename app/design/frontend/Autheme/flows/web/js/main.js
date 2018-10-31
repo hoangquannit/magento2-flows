@@ -1,10 +1,10 @@
-/*jQuery*/
-
-(function ($) {
+require([
+    'jquery'
+],function(){
     // USE STRICT
     "use strict";
 
-    $(document).ready(function () {
+    jQuery(document).ready(function () {
 
         /*Preloader animsition*/
 
@@ -13,16 +13,16 @@
                 $(this).remove();
             });
         });
-        // fixed navbar when scroll
-        var navbarFix = $(".header-windown");
-        var headerOffset = navbarFix.offset().top + 1;
-        $(window).on('scroll', function () {
-            if ($(window).scrollTop() > headerOffset) {
-                navbarFix.addClass('fixed').removeClass("unfixed");
-            } else {
-                navbarFix.addClass('unfixed').removeClass("fixed");
-            }
-        });
+        // // fixed navbar when scroll
+        // var navbarFix = $(".header-windown");
+        // var headerOffset = navbarFix.offset().top + 1;
+        // $(window).on('scroll', function () {
+        //     if ($(window).scrollTop() > headerOffset) {
+        //         navbarFix.addClass('fixed').removeClass("unfixed");
+        //     } else {
+        //         navbarFix.addClass('unfixed').removeClass("fixed");
+        //     }
+        // });
 
         var navbarSelect = document.querySelector("#js-navbar-fixed.section-navbar-4, #js-navbar-fixed.section-navbar-6");
 
@@ -86,13 +86,13 @@
         e.stopPropagation();
     });
 
-    $('#clock').countdown('2018/08/10', function(event) {
-      var $this = $(this).html(event.strftime(''
-        + '<span class="clock days"><span class="date-1">%D</span></br><span class="date-2">Days</span> </span>'
-        + '<span class="clock hours"><span class="date-1">%H</span></br><span class="date-2">Hours</span></span>'
-        + '<span class="clock minutes"><span class="date-1">%M</span></br><span class="date-2">Minutes</span> </span>'
-        + '<span class="clock seconds"><span class="date-1">%S</span></br><span class="date-2">Seconds</span></span>'));
-    });
+    // $('#clock').countdown('2018/08/10', function(event) {
+    //   var $this = $(this).html(event.strftime(''
+    //     + '<span class="clock days"><span class="date-1">%D</span></br><span class="date-2">Days</span> </span>'
+    //     + '<span class="clock hours"><span class="date-1">%H</span></br><span class="date-2">Hours</span></span>'
+    //     + '<span class="clock minutes"><span class="date-1">%M</span></br><span class="date-2">Minutes</span> </span>'
+    //     + '<span class="clock seconds"><span class="date-1">%S</span></br><span class="date-2">Seconds</span></span>'));
+    // });
 
     // Navbar menu dropdown
     $(document).ready(function() {
@@ -166,26 +166,5 @@
     console.log(error);
   }
 
-  try{
-    var scroll = $('.fp-section');
-    if (scroll[0]) {
-        var wW = $(window).width();
-        if(wW >= 768) {
-            $.scrollify({
-                section: ".fp-section",
-                sectionName: false,
-                easing: "easeOutExpo",
-                scrollbars: true,
-                scrollSpeed: 1000,
-                interstitialSection: ".header-no--scroll,#footer,.copy-right"
-            });
-        }
-        
-    }
-
-  } catch(error) {
-    console.log(error);
-  }
-    
-})(jQuery);
+});
 

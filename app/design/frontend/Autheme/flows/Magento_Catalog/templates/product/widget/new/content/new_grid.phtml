@@ -116,69 +116,60 @@ if ($exist = ($block->getProductCollection() && $block->getProductCollection()->
                                     </div>
                                     <?php echo($iterator == count($items)+1) ? '</li>' : '' ?>
                                     <?php echo($countList%8 == 0) ? '</ul></div></div><div class="item"><div class="list-products"><ul class="row">' : '' ?>
-
-                                <!--    quick view -->
-                                    <div class="content-product modal fade" id="view-<?php echo $_item->getId();?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $_item->getId();?>">
-                                        <div class="modal-dialog single-content" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="single-product-content">
-                                                        <div class="row">
-                                                            <div class="col-xs-12 col-sm-6 col-md-5 product-gallery">
-                                                                <ul>
-                                                                    <li>
-                                                                        <a href="#">
-                                                                            <img alt="#" src="images/single-product/SWAY.jpg">
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="col-xs-12 col-sm-6 col-md-7 entry-summary">
-                                                                <div class="product-entry">
-                                                                    <h2>
-                                                                        <a href="#">SWAY SWEATSHIRT</a>
-                                                                    </h2>
+                                <?php endforeach ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <?php echo $block->getPagerHtml() ?>
+            </div>
+        </div>
+    </section>
+    <?php foreach ($items as $_item): ?>
+        <!--    quick view -->
+        <div class="content-product modal fade" id="view-<?php echo $_item->getId();?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $_item->getId();?>">
+            <div class="modal-dialog single-content" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="single-product-content">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-5 product-gallery">
+                                    <ul>
+                                        <li>
+                                            <a href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($_item) ?>">
+                                                <img alt="#" src="<?php echo $block->getUrl('pub/media/catalog').'product'.$_item->getImage();?>">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-7 entry-summary">
+                                    <div class="product-entry">
+                                        <h2>
+                                            <a href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($_item) ?>">
+                                                <?php echo $block->escapeHtml($_item->getName()) ?>
+                                            </a>
+                                        </h2>
 											<span class="price">
 												<span class="price-amount amount">
-													<span class="">£
-													</span>95.00
+													<?php echo $block->getProductPriceHtml($_item, $type); ?>
 												</span>
 											</span>
-                                                                    <p class="stars">
-												<span>
-													<a class="star-1" href="#">
-														<span class="mdi mdi-star"></span>
-													</a>
-													<a class="star-2" href="#">
-														<span class="mdi mdi-star"></span>
-													</a>
-													<a class="star-3" href="#">
-														<span class="mdi mdi-star"></span>
-													</a>
-													<a class="star-4" href="#">
-														<span class="mdi mdi-star"></span>
-													</a>
-													<a class="star-5" href="#">
-														<span class="mdi mdi-star-half"></span>
-													</a>
-												</span>
-												<span class="review">
-													( 1 custormer review )
-												</span>
-                                                                    </p>
-                                                                    <div class="description">
-                                                                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque la moth udantium, totam rem aperiam,
-                                                                        eaque ipsa quae ab illo inventore veritatis et quasi architecton beatae vitae dicta sunt explicabo. Nemo enim
-                                                                        ipsam headech voluptatem quia voluptas sitdup aspernatur aut odit aut fugit, sed quia consequuntur.
-                                                                    </div>
-                                                                    <div class="variations clearfix">
-                                                                        <div class="size">
-                                                                            <p>SIZE</p>
+                                        <p class="stars">
+                                            <?php if ($templateType): ?>
+                                                <?php echo $block->getReviewsSummaryHtml($_item, $templateType) ?>
+                                            <?php endif; ?>
+                                        </p>
+                                        <div class="description">
+                                            <?php echo $_item->getShortDescription(); ?>
+                                        </div>
+                                        <div class="variations clearfix">
+                                            <div class="size">
+                                                <p>SIZE</p>
 													<span>
 														<a href="#">S</a>
 													</span>
@@ -191,9 +182,9 @@ if ($exist = ($block->getProductCollection() && $block->getProductCollection()->
 													<span>
 														<a href="#">XL</a>
 													</span>
-                                                                        </div>
-                                                                        <div class="color">
-                                                                            <p>COLOR </p>
+                                            </div>
+                                            <div class="color">
+                                                <p>COLOR </p>
 													<span class="cl-10">
 														<a href="#"></a>
 													</span>
@@ -203,9 +194,9 @@ if ($exist = ($block->getProductCollection() && $block->getProductCollection()->
 													<span>
 														<a href="#"></a>
 													</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-meta clearfix">
+                                            </div>
+                                        </div>
+                                        <div class="product-meta clearfix">
 												<span>Availability :
 													<a href="#">In stock</a>
 												</span>
@@ -215,26 +206,26 @@ if ($exist = ($block->getProductCollection() && $block->getProductCollection()->
 												<span>Tag :
 													<a href="#">Coat</a>
 												</span>
-                                                                    </div>
-                                                                    <div class="quantity">
-                                                                        <input type="number" min="1" max="999" step="1" value="1">
-                                                                        <div class="quantity-nav">
-                                                                            <div class="quantity-button quantity-up">
-                                                                                <i class="mdi mdi-chevron-up"></i>
-                                                                            </div>
-                                                                            <div class="quantity-button quantity-down">
-                                                                                <i class="mdi mdi-chevron-down"></i>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="btn-bottom">
-                                                                            <a class="au-btn au-btn-primary m-r-5" href="#">Add to cart</a>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="product-button clearfix">
-                                                                        <a class="width" href="#">
-                                                                            <span class="mdi mdi-heart-outline"></span>Add to wishlist</a>
-                                                                        <a class="width" href="#">
-                                                                            <span class="mdi mdi-swap-horizontal"></span>Compare</a>
+                                        </div>
+                                        <div class="quantity">
+                                            <input type="number" min="1" max="999" step="1" value="1">
+                                            <div class="quantity-nav">
+                                                <div class="quantity-button quantity-up">
+                                                    <i class="mdi mdi-chevron-up"></i>
+                                                </div>
+                                                <div class="quantity-button quantity-down">
+                                                    <i class="mdi mdi-chevron-down"></i>
+                                                </div>
+                                            </div>
+                                            <p class="btn-bottom">
+                                                <a class="au-btn au-btn-primary m-r-5" href="#">Add to cart</a>
+                                            </p>
+                                        </div>
+                                        <div class="product-button clearfix">
+                                            <a class="width" href="#">
+                                                <span class="mdi mdi-heart-outline"></span>Add to wishlist</a>
+                                            <a class="width" href="#">
+                                                <span class="mdi mdi-swap-horizontal"></span>Compare</a>
 												<span class="width share">Share :
 													<a href="#">
 														<span class="mdi mdi-facebook"></span>
@@ -249,23 +240,15 @@ if ($exist = ($block->getProductCollection() && $block->getProductCollection()->
 														<span class="mdi mdi-twitter"></span>
 													</a>
 												</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
-                                <!--    end quick view -->
-                                <?php endforeach ?>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <?php echo $block->getPagerHtml() ?>
             </div>
         </div>
-    </section>
+        <!--    end quick view -->
+    <?php endforeach ?>
 <?php endif;?>

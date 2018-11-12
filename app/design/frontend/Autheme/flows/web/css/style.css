@@ -508,8 +508,8 @@ input[type=number] {
   border-radius: 0;
 }
 
-.modal-backdrop {
-  display: none;
+.modal-backdrop.in {
+  opacity: 0.005;
 }
 
 .modal-search .search input {

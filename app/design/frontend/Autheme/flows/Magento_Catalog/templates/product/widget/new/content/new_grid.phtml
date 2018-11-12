@@ -197,9 +197,13 @@ if ($exist = ($block->getProductCollection() && $block->getProductCollection()->
                                             </div>
                                         </div>
                                         <div class="product-meta clearfix">
-												<span>Availability :
-													<a href="#">In stock</a>
-												</span>
+                                            <span><?php echo __('Availability :') ?>
+                                                <?php if ($_item->getIsSalable()): ?>
+                                                    <a href="javaScript:void(0);"><?php /* @escapeNotVerified */ echo __('In stock') ?></a>
+                                                <?php else: ?>
+                                                    <a href="javaScript:void(0);"><?php /* @escapeNotVerified */ echo __('Out of stock') ?></a>
+                                                <?php endif; ?>
+											</span>
 												<span class="category">Category :
 													<a href="#">Woman</a>
 												</span>

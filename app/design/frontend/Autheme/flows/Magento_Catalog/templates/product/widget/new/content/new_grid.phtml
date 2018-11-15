@@ -168,33 +168,36 @@ if ($exist = ($block->getProductCollection() && $block->getProductCollection()->
                                             <?php echo $_item->getShortDescription(); ?>
                                         </div>
                                         <div class="variations clearfix">
-                                            <div class="size">
-                                                <p>SIZE</p>
-													<span>
-														<a href="#">S</a>
-													</span>
-													<span>
-														<a href="#">M</a>
-													</span>
-													<span>
-														<a href="#">L</a>
-													</span>
-													<span>
-														<a href="#">XL</a>
-													</span>
-                                            </div>
-                                            <div class="color">
-                                                <p>COLOR </p>
-													<span class="cl-10">
-														<a href="#"></a>
-													</span>
-													<span class="cl-7">
-														<a href="#"></a>
-													</span>
-													<span>
-														<a href="#"></a>
-													</span>
-                                            </div>
+                                            <?php if ($_item->getTypeInstance()->hasRequiredOptions($_item)): ?>
+                                                <?php $productAttributeOptions = $_item->getTypeInstance()->getConfigurableAttributesAsArray($_item);?>
+                                                <?php foreach ($productAttributeOptions as $attributeOption) :?>
+                                                    <?php if ($attributeOption['attribute_code'] == 'size'): ?>
+                                                        <div class="size">
+                                                            <p><?php echo $attributeOption['label'];?></p>
+                                                            <?php foreach ($attributeOption['values'] as $value): ?>
+                                                                <span>
+                                                                    <a href="#"><?php echo $value['default_label']?></a>
+                                                                </span>
+                                                            <?php endforeach;?>
+                                                        </div>
+                                                    <?php endif;?>
+                                                    <?php if ($attributeOption['attribute_code'] == 'color'): ?>
+                                                        <div class="color">
+                                                            <p><?php echo $attributeOption['label'];?></p>
+                                                            <?php foreach ($attributeOption['values'] as $value): ?>
+                                                                <span class="<?php if (strtolower($value['default_label']) == 'red')
+                                                                    echo 'cl-7';
+                                                                else if (strtolower($value['default_label']) == 'black')
+                                                                    echo 'cl-10';
+                                                                else echo '';
+                                                                ?>">
+                                                                    <a href="#"></a>
+                                                                </span>
+                                                            <?php endforeach;?>
+                                                        </div>
+                                                    <?php endif;?>
+                                                <?php endforeach;?>
+                                            <?php endif;?>
                                         </div>
                                         <div class="product-meta clearfix">
                                             <span><?php echo __('Availability :') ?>

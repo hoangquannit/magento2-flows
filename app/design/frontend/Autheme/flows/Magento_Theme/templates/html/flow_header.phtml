@@ -1,0 +1,6 @@
+<?php
+	$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+	$request = $objectManager->get('Magento\Framework\App\Action\Context')->getRequest();
+	$cmsPage = $objectManager->get('\Magento\Cms\Model\Page');
+?>
+<?php  echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('flow-nav1')->toHtml();?>

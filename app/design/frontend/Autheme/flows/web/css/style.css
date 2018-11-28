@@ -43,6 +43,11 @@ footer, header, hgroup, menu, nav, section {
   display: none;
 }
 
+button:hover{
+  background: none!important;
+  border: none!important;
+}
+
 ol, ul, li {
   list-style-type: none;
   margin-bottom: 0px;

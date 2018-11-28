@@ -1,10 +1,14 @@
-(function ($) {
+require([
+    'jquery',
+    'revolution/js/jquery.themepunch.tools.min',
+    'revolution/js/jquery.themepunch.revolution.min'
+],function(){
     // USE STRICT
     "use strict";
 
-    $(document).ready(function () {
+    jQuery(document).ready(function () {
         /* initialize the slider based on the Slider's ID attribute from the wrapper above */
-        $('#js-slider').show().revolution({
+        jQuery('#js-slider').show().revolution({
             /* options are 'auto', 'fullwidth' or 'fullscreen' */
             responsiveLevels: [1900,1200, 992, 768, 480],
             gridwidth:[1900,1240, 1000, 800, 500],
@@ -33,7 +37,7 @@
                 }
             }
         });
-        $('#js-slider-1').show().revolution({
+        jQuery('#js-slider-1').show().revolution({
             /* options are 'auto', 'fullwidth' or 'fullscreen' */
             responsiveLevels: [1200, 992, 768, 480],
             gridwidth:[1240, 1000, 800, 500],
@@ -62,7 +66,7 @@
                 }
             }
         });
-        $('#js-slider-4').show().revolution({
+        jQuery('#js-slider-4').show().revolution({
             /* options are 'auto', 'fullwidth' or 'fullscreen' */
             responsiveLevels: [1900,1200, 992, 768, 480],
             gridwidth:[1900,1240, 1000, 800, 500],
@@ -91,7 +95,7 @@
                 }
             }
         });
-        $('#js-slider-home-3').show().revolution({
+        jQuery('#js-slider-home-3').show().revolution({
             /* options are 'auto', 'fullwidth' or 'fullscreen' */
             responsiveLevels: [1200, 992, 768, 480],
             gridwidth:[1240, 1000, 800, 500],
@@ -120,7 +124,7 @@
                 }
             }
         });
-         $('#js-slider-home-5').show().revolution({
+        jQuery('#js-slider-home-5').show().revolution({
             /* options are 'auto', 'fullwidth' or 'fullscreen' */
             responsiveLevels: [1200, 992, 768, 480],
             gridwidth:[1240, 1000, 800, 500],

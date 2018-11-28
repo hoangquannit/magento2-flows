@@ -10,6 +10,8 @@
     <referenceContainer name="page.wrapper">
         <container name="header.container" as="header_container" label="Page Header Container"  htmlTag="header" htmlId="header" before="-" />
 
+        <container name="flow-homepage1-slider" as="flow-homepage1-slider" />
+
         <container name="flow-homepage1-categories" as="flow-homepage1-categories" />
 
         <container name="flow-homepage1-featured" as="flow-homepage1-featured" />

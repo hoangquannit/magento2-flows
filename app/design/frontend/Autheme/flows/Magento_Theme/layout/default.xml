@@ -27,10 +27,11 @@
         <referenceContainer name="header.container">
             <block class="Magento\Framework\View\Element\Template" name="mina_header" template="Magento_Theme::html/flow_header.phtml"  before="-">
             </block>
-            <!-- <remove element="catalog.topnav"> -->
         </referenceContainer>
 
-        <!-- <referenceBlock name="catalog.topnav"  remove="true"/> -->
+        <referenceBlock name="navigation.sections" remove="true"/>
+
+        <referenceBlock name="page.main.title" remove="true" />
 
         <move element="skip_to_content" as="skipToContent" destination="mina_header"/>
        

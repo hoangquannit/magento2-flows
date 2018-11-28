@@ -39,6 +39,10 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+.cms-home #maincontent{
+  display: none;
+}
+
 ol, ul, li {
   list-style-type: none;
   margin-bottom: 0px;
